@@ -38,6 +38,21 @@
     }
 }
 
+.container-scores {
+    display: flex;
+    justify-content: space-between;
+    background-color: lightgoldenrodyellow;
+    padding: 1rem;
+    margin-bottom: 2rem;
+
+    div {
+        width: 30%;
+        font-weight: 800;
+        font-size: 1.5rem;
+    }
+}
+
+
 .buttons {
     display: flex;
     justify-content: space-between;

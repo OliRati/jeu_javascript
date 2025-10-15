@@ -44,11 +44,25 @@ function testWinner(choice1, choice2) {
     return false;
 }
 
+/* Recupere les boutons */
+
 const boutonFeu = document.querySelector(".bouton-feu");
 const boutonEau = document.querySelector(".bouton-eau");
 const boutonTerre = document.querySelector(".bouton-terre");
 
+/* Recupere zone d'interractions */
+
 const interractions = document.querySelector(".interractions");
+
+/* Recupere les zones pour le score */
+
+const nombreParties = document.querySelector(".partie-number");
+const nombreGagnees = document.querySelector(".score-user");
+const nombrePerdues = document.querySelector(".score-computer");
+
+let partiesJouer = 0;
+let partiesGagnes = 0;
+let partiesPerdues = 0;
 
 let computerChoice = powerPc();
 
@@ -57,13 +71,26 @@ function theWinnerIs(userChoice) {
 
     if (computerChoice === userChoice)
         str += "égalité";
-    else if (testWinner(computerChoice, userChoice))
+    else if (testWinner(computerChoice, userChoice)) {
+        partiesPerdues++;
         str += "L'ordinateur a gagné";
-    else if (testWinner(userChoice, computerChoice))
+    }
+    else if (testWinner(userChoice, computerChoice)) {
         str += "Vous avez gagné";
+        partiesGagnes++;
+    }
+
+    /* Update interraction section */
 
     interractions.textContent = str;
     interractions.textContent += "\nEssayez encore...";
+
+    partiesJouer++;
+
+    /* Update scores section */
+    nombreParties.textContent = partiesJouer.toString();
+    nombreGagnees.textContent = partiesGagnes.toString();
+    nombrePerdues.textContent = partiesPerdues.toString();
 
     computerChoice = powerPc();
 }

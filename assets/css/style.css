@@ -1,0 +1,89 @@
+@import url("./reset.css");
+
+.container-regles {
+    width: 50rem;
+    margin: 0 auto;
+
+    h1,
+    h2 {
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2rem;
+        color: black
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        color: darkgray
+    }
+
+    ul {
+        margin: 2rem 0;
+    }
+    li {
+        margin-left: 2rem;
+    }
+}
+
+.container-game {
+    width: 30rem;
+    margin: 0 auto;
+
+    p {
+        font-size: 1.5rem;
+        color: gray;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bouton-feu,
+.bouton-eau,
+.bouton-terre {
+    border: none;
+    background-color: lightskyblue;
+    padding: 1rem 3rem;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+
+.bouton-feu {
+    background-color: burlywood;
+}
+
+.bouton-feu:hover {
+    background-color: orange;
+}
+
+.bouton-eau {
+    background-color: lightblue;
+}
+
+.bouton-eau:hover {
+    background-color: lightskyblue;
+}
+
+.bouton-terre {
+    background-color: lightgrey;
+}
+
+.bouton-terre:hover {
+    background-color: gray;
+}
+
+.interractions {
+    margin-top: 2rem;
+    padding: 1rem;
+    width: 100%;
+    background-color: #EEE;
+    color: black;
+    font-size: 1rem;
+    font-weight: 400;
+}

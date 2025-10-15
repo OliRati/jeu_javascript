@@ -1,13 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Javascript Jeu</title>
-    <script src="./assets/js/script.js" defer></script>
-  </head>
-  <body>
 
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <title>Javascript Jeu</title>
+  <script src="./assets/js/script.js" defer></script>
+</head>
+
+<body>
+  <div class="container-regles">
+    <h1>Tu viens jouer avec moi...</h1>
+    <h2>Regles du jeu :</h2>
+    <ul>
+      <li>- Le joueur et l'ordinateur ont trois pouvoirs **feu,eau,terre**</li>
+      <li>- Le **feu** bat la **terre**</li>
+      <li>- L'**eau** bat le **feu**</li>
+      <li>- La **terre** bat l'**eau**</li>
+      <li>- Egalité si le joueur et l'ordinateur ont le même pouvoir</li>
+    </ul>
+  </div>
+
+  <div class="container-game">
+    <p>A toi de jouer :</p>
+    <div class="buttons">
+      <button class="bouton-feu">feu</button>
+      <button class="bouton-eau">eau</button>
+      <button class="bouton-terre">terre</button>
+    </div>
+    <div class="interractions">
+    </div>
+  </div>
+</body>
+
 </html>

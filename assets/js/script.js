@@ -61,15 +61,34 @@ const nombreParties = document.querySelector(".partie-number");
 const nombreGagnees = document.querySelector(".score-user");
 const nombrePerdues = document.querySelector(".score-computer");
 
-let partiesJouer = 0;
-let partiesGagnes = 0;
-let partiesPerdues = 0;
+let partiesJouer;
+let partiesGagnes;
+let partiesPerdues;
+let computerChoice;
 
-let computerChoice = powerPc();
+function updateScores() {
+    nombreParties.textContent = partiesJouer.toString();
+    nombreGagnees.textContent = partiesGagnes.toString();
+    nombrePerdues.textContent = partiesPerdues.toString();
+}
 
-boutonRejouer.disabled = true;
-interractions.textContent = "Choisissez un élément...";
+function gameReset() {
+    partiesJouer = 0;
+    partiesGagnes = 0;
+    partiesPerdues = 0;
 
+    computerChoice = powerPc();
+
+    boutonEau.disabled = false;
+    boutonFeu.disabled = false;
+    boutonTerre.disabled = false;
+    boutonRejouer.disabled = true;
+
+    updateScores();
+    interractions.textContent = "Choisissez un élément...";
+}
+
+gameReset();
 
 function theWinnerIs(userChoice) {
     let str = `Ordinateur : ${tabName[computerChoice]}\nVous : ${tabName[userChoice]}\nResultat : `;
@@ -91,11 +110,8 @@ function theWinnerIs(userChoice) {
 
     partiesJouer++;
 
-    /* Update scores section */
-    nombreParties.textContent = partiesJouer.toString();
-    nombreGagnees.textContent = partiesGagnes.toString();
-    nombrePerdues.textContent = partiesPerdues.toString();
-
+    updateScores();
+    
     if ((partiesPerdues === 10) || (partiesGagnes === 10)) {
         boutonEau.disabled = true;
         boutonFeu.disabled = true;
@@ -129,20 +145,5 @@ boutonTerre.addEventListener("click", () => {
 
 boutonRejouer.addEventListener("click", () => {
     // console.log("Rejouer clicked");
-    partiesJouer = 0;
-    partiesGagnes = 0;
-    partiesPerdues = 0;
-
-    computerChoice = powerPc();
-
-    boutonEau.disabled = false;
-    boutonFeu.disabled = false;
-    boutonTerre.disabled = false;
-    boutonRejouer.disabled = true;
-
-    nombreParties.textContent = partiesJouer.toString();
-    nombreGagnees.textContent = partiesGagnes.toString();
-    nombrePerdues.textContent = partiesPerdues.toString();
-
-    interractions.textContent = "Choisissez un élément...";
+    gameReset();
 })

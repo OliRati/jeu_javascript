@@ -45,7 +45,7 @@ function testWinner(choice1, choice2) {
 }
 
 
-let computerChoice = 2; /* powerPc(); */
+let computerChoice = powerPc();
 let userChoice = 0;
 
 console.log(`Computer  : ${tabName[computerChoice]}  User : ${tabName[userChoice]}`);

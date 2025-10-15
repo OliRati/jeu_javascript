@@ -45,22 +45,27 @@
     display: flex;
     justify-content: space-between;
     background-color: lightgoldenrodyellow;
-    padding: 1rem;
     margin-bottom: 2rem;
 
-    div {
+    >div {
         width: 33.33%;
+        margin: 1rem;
         font-weight: 600;
         font-size: 1.3rem;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    span {
+    .partie-number,
+    .score-user,
+    .score-computer {
         color: lightcoral;
         font-weight: 900;
         font-size: 1.8rem;
     }
 }
-
 
 .container-buttons {
     display: flex;

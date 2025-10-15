@@ -44,17 +44,41 @@ function testWinner(choice1, choice2) {
     return false;
 }
 
+const boutonFeu = document.querySelector(".bouton-feu");
+const boutonEau = document.querySelector(".bouton-eau");
+const boutonTerre = document.querySelector(".bouton-terre");
+
+const interractions = document.querySelector(".interractions");
 
 let computerChoice = powerPc();
-let userChoice = 0;
 
-console.log(`Computer  : ${tabName[computerChoice]}  User : ${tabName[userChoice]}`);
+function theWinnerIs(userChoice) {
+    let str = `Ordinateur : ${tabName[computerChoice]}\nVous : ${tabName[userChoice]}\nResultat : `;
 
-if (computerChoice === userChoice)
-    console.log("None won");
-else if (testWinner(computerChoice, userChoice))
-    console.log('Computer won');
-else if (testWinner(userChoice, computerChoice))
-    console.log('User won');
-    
-    
+    if (computerChoice === userChoice)
+        str += "égalité";
+    else if (testWinner(computerChoice, userChoice))
+        str += "L'ordinateur a gagné";
+    else if (testWinner(userChoice, computerChoice))
+        str += "Vous avez gagné";
+
+    interractions.textContent = str;
+    interractions.textContent += "\nEssayez encore...";
+
+    computerChoice = powerPc();
+}
+
+boutonFeu.addEventListener("click", () => {
+    // console.log("Feu clicked");
+    theWinnerIs(0);
+});
+
+boutonEau.addEventListener("click", () => {
+    // console.log("Eau clicked");
+    theWinnerIs(1);
+});
+
+boutonTerre.addEventListener("click", () => {
+    // console.log("Terre clicked");
+    theWinnerIs(2);
+});

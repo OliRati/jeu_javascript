@@ -22,6 +22,7 @@
     ul {
         margin: 2rem 0;
     }
+
     li {
         margin-left: 2rem;
     }
@@ -29,7 +30,7 @@
 
 .container-game {
     width: 30rem;
-    margin: 0 auto;
+    margin: 2rem auto;
 
     p {
         font-size: 1.5rem;
@@ -60,20 +61,30 @@
 
 .bouton-feu,
 .bouton-eau,
-.bouton-terre {
+.bouton-terre,
+.bouton-rejouer {
     border: none;
-    background-color: lightskyblue;
     padding: 1rem 3rem;
     font-size: 2rem;
     font-weight: 600;
 }
 
-
 .bouton-feu {
     background-color: burlywood;
 }
 
+.bouton-feu:disabled,
+.bouton-eau:disabled,
+.bouton-terre:disabled,
+.bouton-rejouer:disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+    background-color: #eee;
+    color: gray;
+}
+
 .bouton-feu:hover {
+    cursor: pointer;
     background-color: orange;
 }
 
@@ -82,6 +93,7 @@
 }
 
 .bouton-eau:hover {
+    cursor: pointer;
     background-color: lightskyblue;
 }
 
@@ -90,13 +102,24 @@
 }
 
 .bouton-terre:hover {
+    cursor: pointer;
     background-color: gray;
+}
+
+.bouton-rejouer {
+    background-color: lightgreen;
+}
+
+.bouton-rejouer:hover {
+    background-color: greenyellow;
+    cursor: pointer;
 }
 
 .interractions {
     margin-top: 2rem;
     padding: 1rem;
     width: 100%;
+    height: 8rem;
     background-color: #EEE;
     color: black;
     font-size: 1rem;

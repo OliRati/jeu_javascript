@@ -49,6 +49,7 @@ function testWinner(choice1, choice2) {
 const boutonFeu = document.querySelector(".bouton-feu");
 const boutonEau = document.querySelector(".bouton-eau");
 const boutonTerre = document.querySelector(".bouton-terre");
+const boutonRejouer = document.querySelector(".bouton-rejouer");
 
 /* Recupere zone d'interractions */
 
@@ -65,6 +66,10 @@ let partiesGagnes = 0;
 let partiesPerdues = 0;
 
 let computerChoice = powerPc();
+
+boutonRejouer.disabled = true;
+interractions.textContent = "Choisissez un élément...";
+
 
 function theWinnerIs(userChoice) {
     let str = `Ordinateur : ${tabName[computerChoice]}\nVous : ${tabName[userChoice]}\nResultat : `;
@@ -83,7 +88,6 @@ function theWinnerIs(userChoice) {
     /* Update interraction section */
 
     interractions.textContent = str;
-    interractions.textContent += "\nEssayez encore...";
 
     partiesJouer++;
 
@@ -92,7 +96,20 @@ function theWinnerIs(userChoice) {
     nombreGagnees.textContent = partiesGagnes.toString();
     nombrePerdues.textContent = partiesPerdues.toString();
 
-    computerChoice = powerPc();
+    if ((partiesPerdues === 10) || (partiesGagnes === 10)) {
+        boutonEau.disabled = true;
+        boutonFeu.disabled = true;
+        boutonTerre.disabled = true;
+        boutonRejouer.disabled = false;
+        if (partiesGagnes === 10)
+            interractions.textContent += "\nVous aves gagné la manche."
+        else
+            interractions.textContent += "\nVous avez perdu la manche."
+    }
+    else {
+        computerChoice = powerPc();
+        interractions.textContent += "\nEssayez encore...";
+    }
 }
 
 boutonFeu.addEventListener("click", () => {
@@ -109,3 +126,19 @@ boutonTerre.addEventListener("click", () => {
     // console.log("Terre clicked");
     theWinnerIs(2);
 });
+
+boutonRejouer.addEventListener("click", () => {
+    // console.log("Rejouer clicked");
+    partiesJouer = 0;
+    partiesGagnes = 0;
+    partiesPerdues = 0;
+
+    computerChoice = powerPc();
+
+    boutonEau.disabled = false;
+    boutonFeu.disabled = false;
+    boutonTerre.disabled = false;
+    boutonRejouer.disabled = true;
+
+    interractions.textContent = "Choisissez un élément...";
+})

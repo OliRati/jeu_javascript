@@ -1,78 +1,25 @@
-# Jouer contre l'ordinateur
+# Jeu JavaScript : Feu, Eau, Terre
 
-Pour cette FOAD je vous propose de faire un jeu.  
+Ce projet est un petit jeu en JavaScript inspiré du principe "pierre-papier-ciseaux", où le joueur affronte l’ordinateur avec trois pouvoirs : feu, eau et terre.
 
-## Git,github
+## Règle du jeu
 
-Vous devez créer un nouveau dépot sur github avec votre solution pour ce jeu.
-
-Dans votre dépot activer **github pages**.
-
-Votre depot doit contenir les éléments suivants :
-
-```
-/assets
-  /css
-    style.css
-  /js
-    script.js
-index.html
-readme.md
-licence.md
-.gitignore
-```
-
-J'insiste pour que vous fassier des **commits** réguliers , avec des titres compréhensifs.
-
-Faite une feuille de style pour votre jeu.
-
-Dans votre **readme.md** vous devez en quelques phrases :
-- expliquer ce que fait votre projet
-- quels sont les technos utlisées
-- comment et pourquoi vous avez fait tel ou tel choix
-
-Pour me partager votre dépot , forker mon dépot de la foad et ajouter votre url dans l'emplacement **Mon url du jeu**.
-
-##  Mon url du jeu
-
-Mettre son l'url de votre dépot github.
-
-## Jeu en javascript
-
-Voici la régle du jeu :
-- Le joueur et l'ordinateur ont trois pouvoirs **feu,eau,terre**
+- Le joueur et l'ordinateur ont trois pouvoirs : **feu**, **eau**, **terre**
 - Le **feu** bat la **terre**
-- L''**eau** bat le **feu**
+- L'**eau** bat le **feu**
 - La **terre** bat l'**eau**
-- Egalité si le joueur et l'ordinateur ont le même pouvoir
+- Il y a égalité si le joueur et l'ordinateur ont le même pouvoir
+- Une manche est gagnée par le premier qui atteint le score de 10 points
 
-Afin d'implémenter ce jeu en javascript on va devoir utiliser ce qu'on a vu ensemble :
-- variables
-- fonctions
-- conditions
-- tableaux
-- manipulation du dom
+## Technologies utilisées
 
-Je vous donne un plan d'action pour réaliser ce jeu mais libre à vous d'en proposer d'autres.
+- **HTML** : structure de la page et création des boutons pour les choix du joueur.
+- **CSS** : feuille de style personnalisée pour rendre le jeu visuellement attractif et améliorer l’expérience utilisateur.
+- **JavaScript** : logique du jeu, gestion des événements, génération aléatoire du choix de l’ordinateur, comparaison des choix et affichage dynamique des résultats.
 
-Pour chaque étape tester bien votre code,fonctions,etc... via des **console.log()**.
+## Choix techniques
 
-- Faire une fonction javascript **powerPc** qui renvoie un pouvoir aléatoire de l'ordinateur , utiliser **Math.random** et **Math.floor**
-
-- Créer 3 **boutons** dans la page html , **feu,eau,terre** 
-
-- Récupérer la valeur du bouton clické par le joueur
-
-- Faire une fonction **powerPlayer** qui récupere la valeur du bouton du joueur clické
-
-- Faire une fonction **playGame** qui prend 2 parametres , le choix de l'utilisateur et le choix de l'utilisateur et les compare en fonction de la régle du jeu.  
-Cette fonction renvoie une phrase en fonction du résultat.
-
-- Afficher sur la page html ce message. 
-
-Pour ceux qui ont finit, vous pouvez faire la suite :
-
-- Ajouter un nombre de partie limité
-- Afficher les choix du jouer et de l'ordinateur quand un bouton est clické
-- Ajouter un systeme de score avec affichage du score
-- Limiter la partie de jeu , le premier qui arrive à 10 points la partie s'arrete et les bouttons sont désactivés (*button.disabled = true*)
+- **Simplicité et accessibilité** : Le jeu est entièrement en JavaScript natif, sans framework, pour rester simple et accessible à tous.
+- **Manipulation du DOM** : Les interactions et l’affichage des résultats se font dynamiquement pour une expérience fluide.
+- **Feuille de style personnalisée** : J’ai choisi d’ajouter une feuille de style CSS pour rendre le jeu plus agréable visuellement, avec des couleurs distinctes pour chaque pouvoir et des boutons bien visibles.
+- **Lisibilité du code** : Les fonctions sont séparées pour chaque action (choix du joueur, choix de l’ordinateur, comparaison, affichage) afin de faciliter la maintenance et l’évolution du projet.

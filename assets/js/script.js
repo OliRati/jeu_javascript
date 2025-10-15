@@ -118,7 +118,7 @@ function theWinnerIs(userChoice) {
         boutonTerre.disabled = true;
         boutonRejouer.disabled = false;
         if (partiesGagnes === 10)
-            interractions.textContent += "\nVous aves gagné la manche."
+            interractions.textContent += "\nVous avez gagné la manche."
         else
             interractions.textContent += "\nVous avez perdu la manche."
     }

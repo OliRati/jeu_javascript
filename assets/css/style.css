@@ -73,13 +73,10 @@
 .bouton-terre,
 .bouton-rejouer {
     border: none;
-    padding: 1rem 3rem;
+    width: 31%;
+    padding: 1rem 0;
     font-size: 2rem;
     font-weight: 600;
-}
-
-.bouton-feu {
-    background-color: burlywood;
 }
 
 .bouton-feu:disabled,
@@ -89,9 +86,12 @@
     pointer-events: none;
     cursor: not-allowed;
     background-color: #eee;
-    color: gray;
+    color: darkgray;
 }
 
+.bouton-feu {
+    background-color: burlywood;
+}
 .bouton-feu:hover {
     cursor: pointer;
     background-color: orange;
@@ -117,11 +117,12 @@
 
 .bouton-rejouer {
     background-color: lightgreen;
+    width: 100%;
 }
 
 .bouton-rejouer:hover {
-    background-color: greenyellow;
     cursor: pointer;
+    background-color: greenyellow;
 }
 
 .interractions {

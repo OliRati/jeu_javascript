@@ -140,5 +140,9 @@ boutonRejouer.addEventListener("click", () => {
     boutonTerre.disabled = false;
     boutonRejouer.disabled = true;
 
+    nombreParties.textContent = partiesJouer.toString();
+    nombreGagnees.textContent = partiesGagnes.toString();
+    nombrePerdues.textContent = partiesPerdues.toString();
+
     interractions.textContent = "Choisissez un élément...";
 })
